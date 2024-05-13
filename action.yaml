@@ -1,0 +1,16 @@
+name: Demo Workflow
+description: 'Greet someone and record the time'
+
+inputs:
+  who-to-greet:
+    description: Who to greet
+    required: true
+    default: World
+
+runs:
+  using: "composite"
+  steps:
+    - name: Greet Someone
+      id: greet-someone
+      shell: bash
+      run: echo "hello ${{ inputs.who-to-greet }}!"
